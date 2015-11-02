@@ -74,7 +74,6 @@ body {
 .simple_form div.input {
   margin-bottom: 10px;
   clear: both;
-  color: black;
 }
 .simple_form .hint {
   clear: left;
@@ -85,6 +84,14 @@ body {
 
 .clr {
   clear:both;
+}
+
+.field_with_errors {
+  color: #ff3333;
+  background:rgba(20,104,140, 0.5);
+  border-radius: 3px;
+  padding:8px;
+  margin:10px;
 }
 
 
