@@ -49,8 +49,8 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 body {
   background: url('dark_wood.png');
-    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-    color:white
+  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  color:white
 }
 
 .booyah-box {
@@ -63,4 +63,24 @@ body {
 }
 .booyah-box h2, .booyah-box h1 {
   margin:10px;
-  }
+}
+
+.simple_form label {
+  width: 150px;
+  color: white;
+}
+
+.simple_form div.input {
+  margin-bottom: 10px;
+  clear: both;
+  color: black;
+}
+.simple_form .hint {
+  clear: left;
+  margin-left: 150px;
+  color: #555;
+  display: block;
+  font-style: italic;
+}
+
+
