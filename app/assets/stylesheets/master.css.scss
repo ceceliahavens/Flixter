@@ -60,6 +60,7 @@ body {
   background:rgba(58,4,94, 0.5);
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding:10px;
 }
 .booyah-box h2, .booyah-box h1 {
   margin:10px;
@@ -80,6 +81,10 @@ body {
   color: #555;
   display: block;
   font-style: italic;
+}
+
+.clr {
+  clear:both;
 }
 
 
