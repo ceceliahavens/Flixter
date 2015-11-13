@@ -2,7 +2,7 @@ class Instructor::LessonsController < ApplicationController
 	before_action :authenticate_user!
   before_action :require_authorized_for_current_section
 
-  d  before_action :require_authorized_for_current_section
+ before_action :require_authorized_for_current_section
 
   def new
     @lesson = Lesson.new

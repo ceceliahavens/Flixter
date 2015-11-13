@@ -9,19 +9,20 @@
   <div class="text-center">
     <%= link_to 'Add a new section...', new_instructor_course_section_path(@course), :class => 'btn btn-success btn-lg' %>
   </div>
+
   <br />
   <br />
 
 <ul>
-	<% @course.sections.each do |section| %>
-	<li>
-		<%= section.title %>
-        <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-success btn-xs' %>
+    <% @course.sections.each do |section| %>
+      <li>
+        <%= section.title %>
+        <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-primary btn-xs' %>
         <ul>
           <% section.lessons.each do |lesson| %>
-          <li>
-            <b><%= lesson.title %></b>
-             -
+            <li>
+              <b><%= lesson.title %></b>
+              -
               <%= lesson.subtitle %>
             </li>
           <% end %>
