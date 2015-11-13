@@ -18,4 +18,4 @@ class Instructor::SectionsControllerTest < ActionController::TestCase
 		# assert_equal 1, user.courses.sections.count
 	end
  
-end
+
