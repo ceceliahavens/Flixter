@@ -1,14 +1,21 @@
-FactoryGirl.define do  factory :lesson do
-    
-  end
- factory :enrollment do
-end
+FactoryGirl.define do  
+	
+#   factory :lesson do
+# end
 
   factory :user do
     sequence :email do |n|
-    	"usertest#{n}@testloopbackdomain.com"
+    	"ilikemakingcrapup#{n}@gmail.com"
     end
-    password "testmetestme"
-    password_confirmation "testmetestme"
+    password "testonetwotesting"
+    password_confirmation "testonetwotesting"
+	end
+end
+FactoryGirl.define do 
+	factory :course do
+		title "Tacocat"
+		description "It's a palindrome, ya dig?!"
+		cost 800
+		association :user
 	end
 end 
