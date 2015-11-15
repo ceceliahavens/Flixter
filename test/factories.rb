@@ -13,15 +13,14 @@ FactoryGirl.define do  factory :enrollment do
     password "testonetwotesting"
     password_confirmation "testonetwotesting"
 	end
-end
-FactoryGirl.define do  factory :enrollment do
-    
-  end
- 
+
 	factory :course do
 		title "Tacocat"
 		description "It's a palindrome, ya dig?!"
 		cost 800
 		association :user
 	end
-end 
+	end
+	
+  
+
