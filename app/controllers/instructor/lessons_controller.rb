@@ -1,11 +1,8 @@
 class Instructor::LessonsController < ApplicationController
 	before_action :authenticate_user!
-  before_action :require_authorized_for_current_section
+  before_action :require_authorized_for_current_lesson, :only => [:show]
 
-  def new
-    @lesson = Lesson.new
-  end
-
+  
   def create
     @lesson = current_section.lessons.create(lesson_params)
     redirect_to instructor_course_path(current_section.course)
@@ -19,6 +16,10 @@ class Instructor::LessonsController < ApplicationController
     end
   end
   
+  def current_lesson
+    @current_lesson ||= Lesson.find(params[:id])
+  end
+  
   helper_method :current_section
   def current_section
     @current_section ||= Section.find(params[:section_id])
@@ -28,3 +29,5 @@ class Instructor::LessonsController < ApplicationController
         params.require(:lesson).permit(:title, :subtitle, :video)
   end
 end
+
+
