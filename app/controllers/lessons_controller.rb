@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :require_enrolled_for_show_lesson, :only => [:show]
 
+	 
 	def show
 	end
 
