@@ -1,3 +1,4 @@
+<!--javascript for lessons-->
 <script>
   $(function() {
     $('.lessons').sortable({
@@ -10,9 +11,28 @@
         
         });
         }
-   });
+    });
   });
 </script>
+<!--javascript for sections-->
+<script>
+  $(function() {
+    $('.sort_sections').sortable({
+      update: function ( event, ui ) {
+        $.ajax({ 
+          type: 'PUT', 
+          url: ui.item.data('update-url'), 
+          dataType: 'json', 
+          data: { section: { row_order_position: ui.item.index() } }
+        });
+      }
+    });
+  });
+</script>
+
+<br />
+
+
 
 <br />
 <br />
@@ -31,9 +51,9 @@
   <br />
   <br />
 
-<ul>
+<ul class="sort_sections">
      <% current_course.sections.each do |section| %>
-      <li>
+       <li data-update-url="<%= instructor_section_path(section) %>">
         <%= section.title %>
         <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), :class => 'pull-right btn btn-primary btn-xs' %>
         <ul class="lessons">
