@@ -1,8 +1,8 @@
-
 class Instructor::SectionsController < ApplicationController
   before_action :authenticate_user!
   before_action :require_authorized_for_current_course, :only => [:create]
   before_action :require_authorized_for_current_section, :only => [:update]
+  
 	def new
 		@section = Section.new
 	end
@@ -23,21 +23,19 @@ class Instructor::SectionsController < ApplicationController
 		@current_section ||= Section.find(params[:id])
 	end
 
-
 	def require_authorized_for_current_course
       if current_course.user != current_user
       render :text => "Unauthorized", :status => :unauthorized
       end
    	end
 
-	def require_auth_for_current_section
+	def require_authorized_for_current_section
 			if current_section.course.user != current_user
 				render :text => 'Yikes, Looks like you are not authorized', :status => :unauthorized
 			end
 	end
-	
-	
-	helper_method :current_course
+
+			helper_method :current_course
   def current_course
     @current_course ||= Course.find(params[:course_id])
   end
