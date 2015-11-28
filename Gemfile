@@ -54,8 +54,6 @@ gem 'ranked-model'
 
 gem 'jquery-ui-rails'
 
-gem 'ranked-model'
-
 gem 'sprockets', '2.11.0'
 
 # Use ActiveModel has_secure_password
